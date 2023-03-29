@@ -1,9 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import { Inter } from 'next/font/google';
-import styles from '@/styles/Home.module.css';
-
-const inter = Inter({ subsets: ['latin'] });
+import Hero from '../components/Hero';
 
 export default function Home() {
   return (
@@ -20,11 +16,11 @@ export default function Home() {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to Ian&apos;s coding projects!
-        </h1>
-      </main>
+      <Hero
+        heading="A collection of Ian's coding projects"
+        about='"Intellectual growth should commence at birth and cease only at death." - Albert Einstein'
+        projects='Projects'
+      />
     </>
   );
 }
