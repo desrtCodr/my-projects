@@ -35,19 +35,26 @@ function Navbar() {
     <div
       className={`${color} fixed left-0 top-0 w-full z-10 ease-in duration-300`}
     >
-      <div className='max-w-[1240px] m-auto flex justify-between items-center p-4 text-white'>
+      <div className='max-w-[1240px] m-auto flex justify-between items-center p-4'>
         <Link href='/'>
           <h1
             style={{ color: `${textColor}` }}
             className='font-bold text-2xl hover:text-gray-500'
-          >{`<ianMitchard.com />`}</h1>
+          >
+            &lt;
+            <span style={{ color: '#00253E' }}>
+              IanMitchard.com&nbsp;
+            </span>
+            &#47;&gt;
+          </h1>
         </Link>
         <ul className='hidden sm:flex'>
           {path.map((value) => {
             return (
               <li
                 key={value.uid}
-                className={`${textColor} p-4 hover:text-gray-500`}
+                style={{ color: `${textColor}` }}
+                className='p-4 hover:text-gray-500'
               >
                 <Link href={value.path}>{value.name}</Link>
               </li>
