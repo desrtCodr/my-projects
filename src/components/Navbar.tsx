@@ -42,7 +42,7 @@ function Navbar() {
             className='font-bold text-2xl hover:text-gray-500'
           >
             &lt;
-            <span style={{ color: '#00253E' }}>
+            <span className='text-primary-700'>
               IanMitchard.com&nbsp;
             </span>
             &#47;&gt;
