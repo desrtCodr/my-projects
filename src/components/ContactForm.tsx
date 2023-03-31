@@ -1,9 +1,15 @@
 import React from 'react';
+import EmailJS from 'emailjs-com';
 
-function ContacthtmlForm() {
+const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
+const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+const userID = process.env.NEXT_PUBLIC_USER_ID;
+
+function ContactForm() {
   const [email, setEmail] = React.useState('');
   const [subject, setSubject] = React.useState('');
   const [message, setMessage] = React.useState('');
+
   const handleChange = (
     e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -18,14 +24,38 @@ function ContacthtmlForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = {
       email,
       subject,
       message,
     };
+    console.log(typeof serviceID, typeof templateID, typeof userID);
     console.log(data);
+
+    if (!serviceID || !templateID || !userID) {
+      console.log('Missing env variables');
+      return;
+    }
+
+    EmailJS.send(
+      serviceID,
+      templateID,
+      {
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
+      },
+      userID
+    ).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
   return (
@@ -103,4 +133,4 @@ function ContacthtmlForm() {
   );
 }
 
-export default ContacthtmlForm;
+export default ContactForm;
