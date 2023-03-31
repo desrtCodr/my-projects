@@ -6,54 +6,75 @@ const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
 const userID = process.env.NEXT_PUBLIC_USER_ID;
 
 function ContactForm() {
-  const [email, setEmail] = React.useState('');
-  const [subject, setSubject] = React.useState('');
-  const [message, setMessage] = React.useState('');
+  const [formData, setFormData] = React.useState({
+    fullName: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [alertContent, setAlertContent] = React.useState({
+    heading: '',
+    message: '',
+  });
+  const [showAlert, setShowAlert] = React.useState(false);
+
+  if (showAlert) {
+    return (
+      <section className='bg-white dark:bg-gray-900'>
+        <div className='py-8 lg:py-16 px-4 mx-auto max-w-screen-md'>
+          <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white'>
+            {alertContent.heading}
+          </h2>
+          <p className='mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl'>
+            {alertContent.message}
+          </p>
+          <button
+            className='py-3 px-5 text-sm font-medium text-center text-gray-900 rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:text-white dark:focus:ring-primary-800'
+            onClick={() => setShowAlert(false)}
+          >
+            Close
+          </button>
+        </div>
+      </section>
+    );
+  }
 
   const handleChange = (
     e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { id, value } = e.currentTarget;
 
-    if (id === 'email') {
-      setEmail(value);
-    } else if (id === 'subject') {
-      setSubject(value);
-    } else if (id === 'message') {
-      setMessage(value);
-    }
+    setFormData({ ...formData, [id]: value });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = {
-      email,
-      subject,
-      message,
-    };
-    console.log(typeof serviceID, typeof templateID, typeof userID);
-    console.log(data);
 
     if (!serviceID || !templateID || !userID) {
       console.log('Missing env variables');
       return;
     }
 
-    EmailJS.send(
-      serviceID,
-      templateID,
-      {
-        email: data.email,
-        subject: data.subject,
-        message: data.message,
-      },
-      userID
-    ).then(
+    EmailJS.send(serviceID, templateID, formData, userID).then(
       (result) => {
-        console.log(result.text);
+        setFormData({
+          fullName: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+        setAlertContent({
+          heading: 'Thank you for contacting me.',
+          message: 'I will respond to your message as soon as I can.',
+        });
+        setShowAlert(true);
       },
       (error) => {
-        console.log(error.text);
+        setAlertContent({
+          heading: 'Something went wrong.',
+          message: error.text,
+        });
+        setShowAlert(true);
       }
     );
   };
@@ -74,6 +95,22 @@ function ContactForm() {
           className='space-y-8'
           onSubmit={handleSubmit}
         >
+          <div>
+            <label
+              htmlFor='fullName'
+              className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'
+            >
+              Name
+            </label>
+            <input
+              type='fullName'
+              id='fullName'
+              className='shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
+              placeholder='Full Name'
+              required
+              onChange={handleChange}
+            />
+          </div>
           <div>
             <label
               htmlFor='email'
