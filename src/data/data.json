@@ -1,0 +1,81 @@
+[
+  {
+    "id": 1,
+    "latitude": 38.6610912328265,
+    "longitude": -109.49945006928075,
+    "category": "climbing",
+    "name": "The Theater",
+    "description": "A fun sport climbing spot next to the road with several good routes up to 5.12."
+  },
+  {
+    "id": 2,
+    "latitude": 38.668353873207714,
+    "longitude": -109.49999206099564,
+    "category": "kayaking",
+    "name": "Elevator Wave",
+    "description": "A fun small wave to surf on the Colorado River good between 2000-2800 cfs."
+  },
+  {
+    "id": 3,
+    "latitude": 38.682475385333085,
+    "longitude": -109.45577033353815,
+    "category": "kayaking",
+    "name": "Dead Dog",
+    "description": "Great hole to play on between 11,000-13,000 cfs. A park and play spot with easy eddy access river right."
+  },
+  {
+    "id": 4,
+    "latitude": 38.68420401738992,
+    "longitude": -109.44903436386811,
+    "category": "kayaking",
+    "name": "White's Rapid",
+    "description": "A fun class III rapid on the Colorado River."
+  },
+  {
+    "id": 5,
+    "latitude": 38.697773317957214,
+    "longitude": -109.42339902895245,
+    "category": "wingsuiting",
+    "name": "Super Gorgeous"
+  },
+  {
+    "id": 6,
+    "latitude": 38.71958380713335,
+    "longitude": -109.40476924285703,
+    "category": "wingsuiting",
+    "name": "Dome Plateau",
+    "description": "One of the best jumps in Moab. 1900' overall with a sweet terrain line to fly."
+  },
+  {
+    "id": 7,
+    "latitude": 38.52998642041029,
+    "longitude": -109.59405916672974,
+    "category": "basejumping",
+    "name": "Tombstone",
+    "description": "One of the most popular BASE jumps in Moab. 400' with a great lanindng and close to home!"
+  },
+  {
+    "id": 8,
+    "latitude": 38.49136314621521,
+    "longitude": -109.4216655098136,
+    "category": "hanggliding",
+    "name": "Kens Lake",
+    "description": "A good ridge soaring spot and you can cross-country from in the right conditions."
+  },
+  {
+    "id": 9,
+    "latitude": 38.53066388023542,
+    "longitude": -109.27165967222508,
+    "category": "paragliding",
+    "name": "Gold Knob",
+    "description": "A great hike with a great view of the La Sal Mountains. 1,600' elevation gain and an amazing paraglidinging launch spot."
+  },
+  {
+    "id": 10,
+    "latitude": 38.51346841475448,
+    "longitude": -109.60994451135569,
+    "category": "biking",
+    "name": "Lower Ahab",
+    "description": "My favorite downhill trail section in Moab in my opinion."
+  }
+]
