@@ -1,27 +1,6 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  SyntheticEvent,
-} from 'react';
-import {
-  GoogleMap,
-  useLoadScript,
-  MarkerF,
-  InfoWindow,
-} from '@react-google-maps/api';
-
-type Point = {
-  id: string;
-  name: string;
-  latitude: number;
-  longitude: number;
-  category: string;
-  description: string;
-};
-interface MapProps {
-  points: Point[];
-}
+import React, { useState, SyntheticEvent } from 'react';
+import MyMap from '../../components/MyMap';
+import { Point } from '../../types/types';
 
 export default function Home() {
   const points: Point[] = require('../../data/data.json');
@@ -29,14 +8,6 @@ export default function Home() {
   const catagories = Array.from(
     new Set(points.map((point: Point) => point.category))
   );
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey:
-      process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
-  });
-
-  if (!isLoaded) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <section className='bg-white dark:bg-gray-900'>
@@ -84,50 +55,3 @@ export default function Home() {
     </section>
   );
 }
-
-const MyMap: React.FC<MapProps> = ({ points }) => {
-  const mapCenter = useMemo(
-    () => ({
-      lat: 38.573315,
-      lng: -109.549843,
-    }),
-    []
-  );
-
-  const [selectedPoint, setSelectedPoint] = useState<Point>();
-
-  return (
-    <GoogleMap
-      zoom={10}
-      center={mapCenter}
-      mapContainerStyle={{ height: '500px', width: '100%' }}
-    >
-      {points.map((point) => (
-        <MarkerF
-          key={point.id}
-          position={{
-            lat: point.latitude,
-            lng: point.longitude,
-          }}
-          onClick={() => setSelectedPoint(point)}
-        />
-      ))}
-      {selectedPoint && (
-        <InfoWindow
-          onCloseClick={() => {
-            setSelectedPoint(undefined);
-          }}
-          position={{
-            lat: selectedPoint.latitude,
-            lng: selectedPoint.longitude,
-          }}
-        >
-          <div>
-            <h2 className='text-xl'>{selectedPoint.name}</h2>
-            <p>{selectedPoint.description}</p>
-          </div>
-        </InfoWindow>
-      )}
-    </GoogleMap>
-  );
-};
