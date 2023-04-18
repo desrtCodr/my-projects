@@ -6,7 +6,7 @@ import {
   FaArrowCircleRight,
 } from 'react-icons/fa';
 interface sliderProps {
-  slides: { src: string; alt: string; path: string }[];
+  slides: { src: string; alt: string; path?: string }[];
 }
 
 function Slider({ slides }: sliderProps) {
