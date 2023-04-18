@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Hero from '../components/Hero';
 import ContactForm from '../components/ContactForm';
-import Slider from '../components/Slider';
+import Projects from '../components/Projects';
 import { sliderPicsData } from '../data/sliderPicsData';
+import About from '@/components/About';
 
 export default function Home() {
   return (
@@ -24,7 +25,8 @@ export default function Home() {
         about='"Intellectual growth should commence at birth and cease only at death." - Albert Einstein'
         projects='Projects'
       />
-      <Slider slides={sliderPicsData} />
+      <Projects slides={sliderPicsData} />
+      <About />
       <ContactForm />
     </>
   );

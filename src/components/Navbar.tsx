@@ -2,9 +2,9 @@ import Link from 'next/link';
 import React from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 const path = [
-  { uid: 2, name: 'Projects', id: 3, path: 'projects' },
-  { uid: 3, name: 'About', id: 2, path: 'about' },
-  { uid: 4, name: 'Contact', id: 3, path: 'contact' },
+  { uid: 2, name: 'Projects', id: 3, path: '/#projects' },
+  { uid: 3, name: 'About', id: 2, path: '/#about' },
+  { uid: 4, name: 'Contact', id: 3, path: '/#contact' },
 ];
 
 function Navbar() {
@@ -41,11 +41,7 @@ function Navbar() {
             style={{ color: `${textColor}` }}
             className='font-bold text-2xl hover:text-gray-500'
           >
-            &lt;
-            <span className='text-primary-700'>
-              IanMitchard.com&nbsp;
-            </span>
-            &#47;&gt;
+            <span className='text-primary-700'>IanMitchard.com</span>
           </h1>
         </Link>
         <ul className='hidden sm:flex'>
@@ -56,7 +52,9 @@ function Navbar() {
                 style={{ color: `${textColor}` }}
                 className='p-4 hover:text-gray-500'
               >
-                <Link href={value.path}>{value.name}</Link>
+                <Link href={value.path} scroll={false}>
+                  {value.name}
+                </Link>
               </li>
             );
           })}
