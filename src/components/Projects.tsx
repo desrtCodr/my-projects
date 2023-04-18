@@ -6,7 +6,7 @@ import {
   FaArrowCircleRight,
 } from 'react-icons/fa';
 interface sliderProps {
-  slides: { src: string; alt: string }[];
+  slides: { src: string; alt: string; path: string }[];
 }
 
 function Slider({ slides }: sliderProps) {
@@ -52,7 +52,7 @@ function Slider({ slides }: sliderProps) {
                   />
                   {index === current && (
                     <Link
-                      href={`/projects/${pic.alt}`}
+                      href={`/projects${pic.path}`}
                       className='relative flex justify-center p-4'
                     >
                       <p className='absolute capitalize p-5 text-4xl tracking-tight font-extrabold text-primary-700 text-center'>
