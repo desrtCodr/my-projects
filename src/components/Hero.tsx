@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 type HeroProps = {
   heading: string;
@@ -18,7 +19,7 @@ const Hero = ({ heading, about, projects }: HeroProps) => {
         <h2 className='text-5xl font-bold break-word'>{heading}</h2>
         <p className='py-5 text-xl'>{about}</p>
         <button className='py-3 text-xl border p-4'>
-          {projects}
+          <Link href='#projects'>View Projects</Link>
         </button>
       </div>
     </section>
