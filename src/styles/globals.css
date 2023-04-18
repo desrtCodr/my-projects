@@ -16,6 +16,9 @@ html {
 .topo-img {
   background-image: url('https://images.unsplash.com/photo-1543039625-14cbd3802e7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80');
 }
+.bored-img {
+  background-image: url('https://images.unsplash.com/photo-1478595219720-e05a0c3a0c4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=966&q=80');
+}
 
 .about-img::before {
   content: '';

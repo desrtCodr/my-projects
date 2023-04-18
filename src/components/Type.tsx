@@ -25,10 +25,10 @@ interface TypeProps {
 export default function Type({ group, handleChange }: TypeProps) {
   return (
     <Card variant='outlined'>
-      <CardContent className=''>
+      <CardContent>
         <FormControl>
           <FormLabel
-            id='demo-radio-buttons-group-label'
+            id='label'
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },

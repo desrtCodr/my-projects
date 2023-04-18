@@ -37,16 +37,16 @@ export default function NotBored() {
   return (
     <section
       id='notBored'
-      className='flex justify-center h-screen bg-center bg-cover topo-img'
+      className='flex justify-center h-screen bg-center bg-cover bored-img'
     >
       <div className='absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]' />
-      <div className='py-8 lg:py-16 px-4 mx-auto max-w-screen-md z-[2]'>
-        <h2 className='text-4xl font-bold text-center text-white'>
-          !Bored App
+      <div className='flex flex-col justify-center items-center py-8 lg:py-16 px-4 mx-auto max-w-screen-md z-[2]'>
+        <h2 className='mb-5 text-4xl font-bold text-center text-white'>
+          You bored?
         </h2>
         <p className='mt-2 text-center text-slate-300'>
-          Select an activity category and click the Show Activity if
-          you are looking for something to do!
+          Select an activity category and click the Show Activity to
+          find something to do!
         </p>
         <div className='m-8'>
           <Type group={group} handleChange={handleChange} />
