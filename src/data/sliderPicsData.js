@@ -11,7 +11,8 @@ export const sliderPicsData = [
   },
   {
     src: 'https://images.unsplash.com/photo-1610412327313-645b21903718?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-    alt: 'project 3',
+    alt: 'Task Manager App',
+    path: 'https://task-manager-alpha-seven.vercel.app/',
   },
   {
     src: 'https://images.unsplash.com/photo-1592427527147-5d2541620df1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
