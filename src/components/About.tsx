@@ -24,7 +24,7 @@ function About() {
           I am a software developer with a background in industrial
           engineering, clinical informatics and IT support in the
           cloud. I am passionate about creating web applications that
-          are intuative, creative, sophisitcated and elegant.
+          are intuitive, creative, sophisticated and elegant.
         </p>
       </div>
     </section>
