@@ -1,4 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+export const runtime = 'edge';
 
 const url = 'https://www.boredapi.com/api/activity';
 

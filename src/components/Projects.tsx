@@ -52,7 +52,11 @@ function Slider({ slides }: sliderProps) {
                   />
                   {index === current && (
                     <Link
-                      href={`/projects${pic.path}`}
+                      href={
+                        pic.alt === 'Task Manager App'
+                          ? pic.path
+                          : `/projects${pic.path}`
+                      }
                       className='relative flex justify-center p-4'
                     >
                       <p className='absolute capitalize p-5 text-4xl tracking-tight font-extrabold text-primary-700 text-center'>

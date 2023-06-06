@@ -12,14 +12,6 @@ export const sliderPicsData = [
   {
     src: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80',
     alt: 'Task Manager App',
-    path: 'https://task-manager-alpha-seven.vercel.app/',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1592427527147-5d2541620df1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
-    alt: 'project 4',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1635786155668-4fabf1131e57?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-    alt: 'project 5',
+    path: '/taskManager',
   },
 ];
