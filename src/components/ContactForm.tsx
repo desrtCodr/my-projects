@@ -1,5 +1,5 @@
 import React from 'react';
-import EmailJS from 'emailjs-com';
+import EmailJS from '@emailjs/browser';
 
 const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
 const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
