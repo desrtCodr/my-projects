@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import profilePic from '../../public/ianmitchard.jpg';
 
 function About() {
   return (
@@ -14,7 +15,7 @@ function About() {
         </h2>
 
         <Image
-          src='/ianmitchard.jpeg'
+          src={profilePic}
           alt='Ian Mitchard'
           width={200}
           height={200}
