@@ -1,6 +1,29 @@
+/* eslint-disable @next/next/no-img-element */
+
 import React from 'react';
-import Image from 'next/image';
-import profilePic from '../../public/ianmitchard.jpg';
+//import Image from 'next/image';
+
+// const normalizeSrc = (src: string) => {
+//   return src.startsWith('/') ? src.slice(1) : src;
+// };
+// type cloudflareLoaderProps = {
+//   src: string;
+//   width: number;
+//   quality?: number;
+// };
+
+// const cloudflareLoader = ({
+//   src,
+//   width,
+//   quality,
+// }: cloudflareLoaderProps) => {
+//   const params = [`width=${width}`];
+//   if (quality) {
+//     params.push(`quality=${quality}`);
+//   }
+//   const paramsString = params.join(',');
+//   return `/cdn-cgi/image/${paramsString}/${normalizeSrc(src)}`;
+// };
 
 function About() {
   return (
@@ -14,8 +37,8 @@ function About() {
           Specialist
         </h2>
 
-        <Image
-          src={profilePic}
+        <img
+          src='/ianmitchard.jpg'
           alt='Ian Mitchard'
           width={200}
           height={200}
