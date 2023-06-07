@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
+
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import {
   FaArrowCircleLeft,
@@ -59,7 +60,7 @@ function Slider({ slides }: sliderProps) {
                         {pic.alt}
                       </p>
 
-                      <Image
+                      <img
                         src={pic.src}
                         alt={pic.alt}
                         width={800}
